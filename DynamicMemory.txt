@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+   int *p,n=4,i;
+   p=(int*)calloc(n,sizeof(int));
+  printf("Enter values\n");
+  for(i=0;i<n;i++)
+     scanf("%d",p+i);
+     
+   printf("Values are \n");
+   for(i=0;i<n;i++)
+     printf("%d\n",*(p+i));
+  n++;
+  p=(void*)realloc(p,n*sizeof(int));
+  printf("After increasing size to 1 ");
+  scanf("%d",p+n-1);
+  printf("%d\n",*(p+n-1));
+  free(p);
+    return 0;
+}
